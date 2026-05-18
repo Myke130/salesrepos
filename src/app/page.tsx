@@ -4,6 +4,10 @@ import NavClient from '@/components/NavClient'
 import ScrollReveal from '@/components/ScrollReveal'
 import WaitlistButton from '@/components/WaitlistButton'
 import WaitlistModal from '@/components/WaitlistModal'
+import CheckoutButton from '@/components/CheckoutButton'
+
+const PRICE_CORE    = 'price_1TYUluHhw9qqOoDRRTsLxz5H'
+const PRICE_FULL_OS = 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -376,21 +380,54 @@ function Pricing() {
             </h2>
           </div>
 
-          <div className="max-w-lg mx-auto">
-            <div className="pricing-card-featured reveal flex flex-col relative">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+
+            {/* Core Stack */}
+            <div className="pricing-card-ghost reveal flex flex-col">
+              <div className="mb-6">
+                <p className="font-sora font-bold text-sm uppercase tracking-widest mb-2" style={{ color: 'rgba(255,255,255,0.55)' }}>Core Stack</p>
+                <div className="flex items-end gap-2 mb-1">
+                  <span className="font-sora font-black text-5xl text-white">$67</span>
+                </div>
+                <p className="text-sm mb-4" style={{ color: 'rgba(255,255,255,0.50)' }}>one-time payment</p>
+                <p className="text-sm leading-relaxed" style={{ color: 'rgba(255,255,255,0.75)' }}>
+                  The 7 essential skills covering the core sales workflow — from research to follow-up.
+                </p>
+              </div>
+              <ul className="space-y-3 mb-8 flex-1">
+                {[
+                  'ICP Builder + Prospect Research',
+                  'Outreach Writer + Cold Call Script',
+                  'Discovery Call Prep',
+                  'Call Notes to CRM + Follow-up Sequencer',
+                ].map((row) => (
+                  <li key={row} className="flex items-start gap-2.5 text-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>
+                    <CheckIcon />
+                    <span>{row}</span>
+                  </li>
+                ))}
+              </ul>
+              <CheckoutButton
+                priceId={PRICE_CORE}
+                className="pricing-ghost-btn disabled:opacity-60"
+              >
+                Buy Core Stack — $67
+              </CheckoutButton>
+            </div>
+
+            {/* Full OS */}
+            <div className="pricing-card-featured reveal flex flex-col relative" style={{ transitionDelay: '100ms' }}>
               <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
                 <span className="text-white font-sora font-bold text-xs px-4 py-1 rounded-full uppercase tracking-wide" style={{ backgroundColor: '#4CAF50' }}>
-                  Founding Member
+                  Most Popular
                 </span>
               </div>
               <div className="mb-6">
                 <p className="font-sora font-bold text-sm text-blue uppercase tracking-widest mb-2">Full OS</p>
-                <div className="flex items-end gap-3 mb-1">
-                  <span className="font-sora font-black text-5xl text-navy">$97</span>
-                  <span className="font-sora font-bold text-2xl text-slate-300 line-through mb-1">$127</span>
+                <div className="flex items-end gap-2 mb-1">
+                  <span className="font-sora font-black text-5xl text-navy">$127</span>
                 </div>
-                <p className="text-slate-400 text-sm mb-1">founding member price</p>
-                <p className="font-sora font-semibold text-xs mb-4" style={{ color: '#4CAF50' }}>First 100 members only. Locks in forever.</p>
+                <p className="text-slate-400 text-sm mb-4">one-time payment</p>
                 <p className="text-slate-600 text-sm leading-relaxed">
                   All 17 skills covering the complete sales cycle — from ICP building and prospect research through commission tracking.
                 </p>
@@ -408,10 +445,14 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <WaitlistButton className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors">
-                Join the Waitlist
-              </WaitlistButton>
+              <CheckoutButton
+                priceId={PRICE_FULL_OS}
+                className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors disabled:opacity-60"
+              >
+                Buy Full OS — $127
+              </CheckoutButton>
             </div>
+
           </div>
           <p className="text-sm text-center mt-10" style={{ color: 'rgba(255,255,255,0.45)' }}>
             Try any three skills. If they don&rsquo;t save you two hours in your first week, reply to your receipt email for a full refund. No questions.

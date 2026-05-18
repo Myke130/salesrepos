@@ -1,0 +1,36 @@
+'use client'
+
+import { useState } from 'react'
+
+export default function CheckoutButton({
+  priceId,
+  className,
+  children,
+}: {
+  priceId: string
+  className: string
+  children: React.ReactNode
+}) {
+  const [loading, setLoading] = useState(false)
+
+  async function handleClick() {
+    setLoading(true)
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ priceId }),
+      })
+      const { url } = await res.json()
+      window.location.href = url
+    } catch {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <button type="button" className={className} onClick={handleClick} disabled={loading}>
+      {loading ? 'Redirecting…' : children}
+    </button>
+  )
+}
