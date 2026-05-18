@@ -134,17 +134,7 @@ function Hero() {
     <section className="hero-bg relative overflow-hidden pb-28 md:pb-36">
       {/* Logo band */}
       <div className="bg-white mt-16 py-10 flex flex-col items-center justify-center gap-3">
-        <h2
-          className="font-sora font-black text-6xl md:text-7xl lg:text-8xl text-center tracking-tight leading-none"
-          style={{
-            background: 'linear-gradient(to right, #0a1f6e, #6B8EF5)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            backgroundClip: 'text',
-          }}
-        >
-          SalesRep<span style={{ WebkitTextFillColor: '#4CAF50', color: '#4CAF50' }}>OS</span>
-        </h2>
+        <img src="/salesrepos-logo.png" alt="SalesRepOS" className="h-16 md:h-20 lg:h-24 w-auto" />
         <p className="font-sans text-lg md:text-xl text-slate-500 text-center">
           The operating system for sales reps.
         </p>
