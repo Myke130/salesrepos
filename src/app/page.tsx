@@ -134,7 +134,7 @@ function Hero() {
     <section className="hero-bg relative overflow-hidden pb-28 md:pb-36">
       {/* Logo band */}
       <div className="bg-white mt-16 py-10 flex flex-col items-center justify-center gap-3">
-        <img src="/salesrepos-logo.png" alt="SalesRepOS" className="w-[400px] max-w-full h-auto" />
+        <img src="/salesrepos-logo.png" alt="SalesRepOS" className="w-[550px] max-w-full h-auto" />
       </div>
 
       {/* Hero content */}
