@@ -4,10 +4,6 @@ import NavClient from '@/components/NavClient'
 import ScrollReveal from '@/components/ScrollReveal'
 import WaitlistButton from '@/components/WaitlistButton'
 import WaitlistModal from '@/components/WaitlistModal'
-import CheckoutButton from '@/components/CheckoutButton'
-
-const PRICE_CORE    = 'price_1TYUluHhw9qqOoDRRTsLxz5H'
-const PRICE_FULL_OS = 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -407,12 +403,9 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <CheckoutButton
-                priceId={PRICE_CORE}
-                className="pricing-ghost-btn disabled:opacity-60"
-              >
-                Buy Core Stack — $67
-              </CheckoutButton>
+              <WaitlistButton className="pricing-ghost-btn">
+                Join the Waitlist
+              </WaitlistButton>
             </div>
 
             {/* Full OS */}
@@ -445,12 +438,9 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <CheckoutButton
-                priceId={PRICE_FULL_OS}
-                className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors disabled:opacity-60"
-              >
-                Buy Full OS — $127
-              </CheckoutButton>
+              <WaitlistButton className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors">
+                Join the Waitlist
+              </WaitlistButton>
             </div>
 
           </div>
