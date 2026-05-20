@@ -21,17 +21,16 @@ export default function NavClient() {
       }`}
     >
       <div className="max-w-inner mx-auto px-6 h-16 flex items-center justify-end">
-        <button
-          type="button"
-          onClick={() => window.dispatchEvent(new CustomEvent('openWaitlist'))}
+        <a
+          href="#pricing"
           className={`inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded transition-all duration-300 ${
             scrolled
               ? 'bg-navy text-white hover:bg-navy-muted'
               : 'bg-white/15 text-white border border-white/30 hover:bg-white/25 backdrop-blur-sm'
           }`}
         >
-          Join the Waitlist
-        </button>
+          Get SalesRepOS
+        </a>
       </div>
     </header>
   )

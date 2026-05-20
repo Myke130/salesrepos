@@ -2,8 +2,7 @@
 
 import NavClient from '@/components/NavClient'
 import ScrollReveal from '@/components/ScrollReveal'
-import WaitlistButton from '@/components/WaitlistButton'
-import WaitlistModal from '@/components/WaitlistModal'
+import CheckoutButton from '@/components/CheckoutButton'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -147,12 +146,15 @@ function Hero() {
             SalesRepOS handles the research, outreach, call notes, and follow-up so you spend your time where it actually pays.
           </p>
           <div className="flex flex-wrap gap-4 mb-12 hero-anim-2">
-            <WaitlistButton className="inline-flex items-center gap-2 font-sora font-bold px-7 py-3.5 rounded-lg transition-colors shadow-lg bg-[#4CAF50] text-white hover:bg-[#3d9142]">
-              Join the Waitlist
-            </WaitlistButton>
+            <a
+              href="#pricing"
+              className="inline-flex items-center gap-2 font-sora font-bold px-7 py-3.5 rounded-lg transition-colors shadow-lg bg-[#4CAF50] text-white hover:bg-[#3d9142]"
+            >
+              See Pricing
+            </a>
           </div>
           <div className="flex flex-wrap gap-3 hero-anim-3">
-            {['17 skills', 'Zero setup', 'Founding member price $97'].map((label) => (
+            {['17 skills', 'One-time payment', 'Instant download'].map((label) => (
               <span
                 key={label}
                 className="inline-flex items-center gap-1.5 font-sora font-semibold text-sm px-4 py-2 rounded-full"
@@ -374,6 +376,9 @@ function Pricing() {
             <h2 className="font-sora font-black text-4xl md:text-5xl text-white mx-auto" style={{ maxWidth: '800px' }}>
               No subscription. No seat fees. Buy it once, use it on every deal you work.
             </h2>
+            <p className="text-base mt-5" style={{ color: 'rgba(255,255,255,0.65)' }}>
+              Each skill is a plain markdown file — works with Claude Code, ChatGPT, Cursor, or any AI you already use.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
@@ -403,9 +408,9 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <WaitlistButton className="pricing-ghost-btn">
-                Join the Waitlist
-              </WaitlistButton>
+              <CheckoutButton priceId="price_1TYUluHhw9qqOoDRRTsLxz5H" className="pricing-ghost-btn">
+                Get Core Stack — $67
+              </CheckoutButton>
             </div>
 
             {/* Full OS */}
@@ -438,15 +443,21 @@ function Pricing() {
                   </li>
                 ))}
               </ul>
-              <WaitlistButton className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors">
-                Join the Waitlist
-              </WaitlistButton>
+              <CheckoutButton priceId="price_1TYUlwHhw9qqOoDRgcwcP0Mi" className="block w-full text-center bg-navy text-white font-sora font-bold py-3.5 rounded-lg hover:bg-navy-muted transition-colors">
+                Get Full OS — $127
+              </CheckoutButton>
             </div>
 
           </div>
-          <p className="text-sm text-center mt-10" style={{ color: 'rgba(255,255,255,0.45)' }}>
-            Try any three skills. If they don&rsquo;t save you two hours in your first week, reply to your receipt email for a full refund. No questions.
-          </p>
+          <div className="flex items-start justify-center gap-3 mt-10 max-w-xl mx-auto reveal">
+            <svg className="w-5 h-5 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="none" style={{ color: '#4CAF50' }}>
+              <path d="M10 2L3 6v5c0 4.418 3.134 8.147 7 9 3.866-.853 7-4.582 7-9V6l-7-4z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+              <path d="M7 10l2 2 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            <p className="text-sm text-left" style={{ color: 'rgba(255,255,255,0.75)' }}>
+              <span className="font-semibold text-white">No-risk guarantee.</span> Try any three skills. If they don&rsquo;t save you two hours in your first week, reply to your receipt email for a full refund. No questions asked.
+            </p>
+          </div>
         </div>
       </ScrollReveal>
     </section>
@@ -501,12 +512,12 @@ function ClosingCta() {
             You don&rsquo;t need more tools. You need less time between &ldquo;I got off a call&rdquo; and &ldquo;everything&rsquo;s logged and the follow-up is out.&rdquo;
           </h2>
           <div className="flex flex-wrap gap-4 justify-center mt-10 reveal reveal-d1">
-            <WaitlistButton className="inline-flex items-center gap-2 text-white font-sora font-bold px-8 py-4 rounded-lg transition-colors shadow-lg bg-[#4CAF50] hover:bg-[#3d9142]">
-              Join the Waitlist
+            <CheckoutButton priceId="price_1TYUlwHhw9qqOoDRgcwcP0Mi" className="inline-flex items-center gap-2 text-white font-sora font-bold px-8 py-4 rounded-lg transition-colors shadow-lg bg-[#4CAF50] hover:bg-[#3d9142]">
+              Get SalesRepOS
               <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-            </WaitlistButton>
+            </CheckoutButton>
           </div>
         </div>
       </ScrollReveal>
@@ -534,7 +545,6 @@ function Footer() {
 export default function Page() {
   return (
     <>
-      <WaitlistModal />
       <NavClient />
       <main>
         <Hero />
