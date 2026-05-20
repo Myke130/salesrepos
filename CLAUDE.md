@@ -42,15 +42,29 @@ A 17-skill Claude Code stack covering the full sales operating cycle — prospec
 | `src/app/page.tsx` | Landing page — hero, workflow chain, skills breakdown, live proof, pricing, FAQ, closing CTA |
 | `salesrepos/skills/*.md` | All 17 skill files |
 
+## Primary URL
+
+**salesrepos.com** — live on Vercel, auto-deploy from `master`
+
 ## Current Phase
 
-Landing page scaffolded. Connecting to Vercel and deploying to salesrepos.com.
+Product is live and publicly purchasable. Waitlist gate removed.
 
-**Pending infrastructure:**
-- Stripe: $67 Core and $127 Full OS products
-- Brevo: purchase delivery email + day-3 upsell sequence
-- DNS: point `salesrepos.com` to Vercel deployment
-- Skill files: copy from flexjobrx/skills/ and customize
+**Infrastructure status:**
+- Stripe: ✅ $67 Core (`price_1TYUluHhw9qqOoDRRTsLxz5H`) and $127 Full OS (`price_1TYUlwHhw9qqOoDRgcwcP0Mi`) — live mode
+- Brevo: ✅ Purchase delivery email + day-3 upsell (FULLUPGRADE60) via `/api/webhooks/stripe`
+- Stripe webhook: registered at `https://salesrepos.com/api/webhooks/stripe`, event: `checkout.session.completed`
+- DNS: ✅ salesrepos.com pointing to Vercel
+- Skill files: ✅ All 17 skills in `salesrepos/skills/`
+- Download zips: ✅ `public/downloads/salesrepos-core.zip` (7 skills), `public/downloads/salesrepos-full-os.zip` (17 skills)
+
+## Key API Routes
+
+| Route | Purpose |
+|---|---|
+| `POST /api/checkout` | Creates Stripe checkout session; accepts `priceId` |
+| `POST /api/waitlist` | Adds contact to Brevo list 6; still active for future use |
+| `POST /api/webhooks/stripe` | Handles `checkout.session.completed`; fires delivery email |
 
 ## Git Workflow
 
