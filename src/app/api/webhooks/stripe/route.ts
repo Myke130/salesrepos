@@ -6,8 +6,10 @@ function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!)
 }
 
-const PRICE_CORE    = process.env.STRIPE_PRICE_CORE    ?? 'price_1TYUluHhw9qqOoDRRTsLxz5H'
-const PRICE_FULL_OS = process.env.STRIPE_PRICE_FULL_OS ?? 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
+const PRICE_CORE      = process.env.STRIPE_PRICE_CORE    ?? 'price_1TYUluHhw9qqOoDRRTsLxz5H'
+const PRICE_FULL_OS   = process.env.STRIPE_PRICE_FULL_OS ?? 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
+// TEST ONLY — remove after delivery email is confirmed end-to-end
+const PRICE_CORE_TEST = 'price_1TZCoEHhw9qqOoDRKGvN9yKZ'
 const DOWNLOAD_BASE = 'https://salesrepos.com/downloads'
 const FULL_OS_LINK  = 'https://salesrepos.com/#pricing'
 
@@ -120,7 +122,13 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session
     const email = session.customer_details?.email
-    if (!email) return NextResponse.json({ ok: true })
+
+    console.log('[webhook] session:', session.id, '| email:', email ?? 'none')
+
+    if (!email) {
+      console.log('[webhook] No email — skipping')
+      return NextResponse.json({ ok: true })
+    }
 
     // Retrieve line items to identify which product was purchased
     const sessionWithItems = await stripe.checkout.sessions.retrieve(session.id, {
@@ -128,7 +136,15 @@ export async function POST(req: NextRequest) {
     })
     const priceId = sessionWithItems.line_items?.data[0]?.price?.id
 
-    if (priceId === PRICE_CORE) {
+    console.log('[webhook] priceId:', priceId)
+    console.log('[webhook] PRICE_CORE:', PRICE_CORE)
+    console.log('[webhook] PRICE_FULL_OS:', PRICE_FULL_OS)
+    const isCore   = priceId === PRICE_CORE || priceId === PRICE_CORE_TEST
+    const isFullOs = priceId === PRICE_FULL_OS
+    console.log('[webhook] match:', isCore ? 'CORE' : isFullOs ? 'FULL_OS' : 'NONE')
+
+    if (isCore) {
+      console.log('[webhook] Sending Core delivery email to', email)
       await sendEmail({
         to: email,
         subject: 'Your SalesRepOS Core Skills — Download Inside',
@@ -141,12 +157,17 @@ export async function POST(req: NextRequest) {
         html: upsellHtml(),
         scheduledAt: day3,
       })
-    } else if (priceId === PRICE_FULL_OS) {
+      console.log('[webhook] Core delivery + day-3 upsell queued')
+    } else if (isFullOs) {
+      console.log('[webhook] Sending Full OS delivery email to', email)
       await sendEmail({
         to: email,
         subject: 'Your SalesRepOS Full OS — Download Inside',
         html: fullOsDeliveryHtml(DOWNLOAD_BASE),
       })
+      console.log('[webhook] Full OS delivery sent')
+    } else {
+      console.log('[webhook] No match — priceId not recognized, no email sent')
     }
   }
 
