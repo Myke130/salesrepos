@@ -6,10 +6,8 @@ function getStripe() {
   return new Stripe(process.env.STRIPE_SECRET_KEY!)
 }
 
-const PRICE_CORE      = process.env.STRIPE_PRICE_CORE    ?? 'price_1TYUluHhw9qqOoDRRTsLxz5H'
-const PRICE_FULL_OS   = process.env.STRIPE_PRICE_FULL_OS ?? 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
-// TEST ONLY — remove after delivery email is confirmed end-to-end
-const PRICE_CORE_TEST = 'price_1TZCoEHhw9qqOoDRKGvN9yKZ'
+const PRICE_CORE    = process.env.STRIPE_PRICE_CORE    ?? 'price_1TYUluHhw9qqOoDRRTsLxz5H'
+const PRICE_FULL_OS = process.env.STRIPE_PRICE_FULL_OS ?? 'price_1TYUlwHhw9qqOoDRgcwcP0Mi'
 const DOWNLOAD_BASE = 'https://salesrepos.com/downloads'
 const FULL_OS_LINK  = 'https://salesrepos.com/#pricing'
 
@@ -139,7 +137,7 @@ export async function POST(req: NextRequest) {
     console.log('[webhook] priceId:', priceId)
     console.log('[webhook] PRICE_CORE:', PRICE_CORE)
     console.log('[webhook] PRICE_FULL_OS:', PRICE_FULL_OS)
-    const isCore   = priceId === PRICE_CORE || priceId === PRICE_CORE_TEST
+    const isCore   = priceId === PRICE_CORE
     const isFullOs = priceId === PRICE_FULL_OS
     console.log('[webhook] match:', isCore ? 'CORE' : isFullOs ? 'FULL_OS' : 'NONE')
 
