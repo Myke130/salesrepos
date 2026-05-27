@@ -24,6 +24,33 @@ export const metadata: Metadata = {
   title: 'SalesRepOS — The Operating System for Sales Reps',
   description:
     '17 Claude-powered skills for sales reps. Research, outreach, call prep, CRM notes, commission tracking — handled. Founding member price $97.',
+  metadataBase: new URL('https://salesrepos.com'),
+  alternates: {
+    canonical: 'https://salesrepos.com',
+  },
+  openGraph: {
+    title: 'SalesRepOS — The Operating System for Sales Reps',
+    description:
+      '17 Claude-powered skills for sales reps. Research, outreach, call prep, CRM notes, commission tracking — handled. Founding member price $97.',
+    url: 'https://salesrepos.com',
+    siteName: 'SalesRepOS',
+    type: 'website',
+    images: [
+      {
+        url: '/salesrepos-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'SalesRepOS — The Operating System for Sales Reps',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'SalesRepOS — The Operating System for Sales Reps',
+    description:
+      '17 Claude-powered skills for sales reps. Research, outreach, call prep, CRM notes, commission tracking — handled. Founding member price $97.',
+    images: ['/salesrepos-logo.png'],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
