@@ -10,6 +10,12 @@ A 17-skill Claude Code stack covering the full sales operating cycle — prospec
 - **Hosting:** Vercel — auto-deploy from `master`
 - **Backend:** None yet — Stripe and Brevo pending
 
+## Temporary Integrations
+
+| Integration | File | Status | Action Required |
+|---|---|---|---|
+| Scupe.ai tracking pixel | `src/app/layout.tsx` | Active — test only | Remove `<script>` block in `<head>` when Scupe.ai testing is complete |
+
 ## Pricing Tiers
 
 | Tier | Price | Contents |

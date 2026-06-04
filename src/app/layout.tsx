@@ -56,6 +56,16 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${sora.variable} ${dmSans.variable} ${jetbrains.variable}`}>
+      <head>
+        {/* TODO: Remove Scupe.ai test pixel before production cleanup */}
+        {/* Start Scupe.ai integration script for Obtainr LLC */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `!function(w,d,s,u,dbg){var js,js2,fjs=d.getElementsByTagName(s)[0];window.rdcndbg=dbg;js=d.createElement(s);js.async=!0;js.src=u;fjs.parentNode.insertBefore(js,fjs);js2=d.createElement(s);js2.async=!0;js2.src='https://app.scupe.ai/scupe.ai.min.js';fjs.parentNode.insertBefore(js2,fjs);}(window,document,'script','https://rdcdn.com/rtjs?aid=34221',!1);`,
+          }}
+        />
+        {/* End Scupe.ai integration script for Obtainr LLC */}
+      </head>
       <body className="font-sans bg-white text-navy antialiased">
         {children}
       </body>

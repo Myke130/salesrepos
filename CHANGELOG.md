@@ -4,6 +4,13 @@ All file changes are logged here for surgical manual deploys.
 
 ---
 
+## [0.5.1] — 2026-05-21
+
+### No Changes
+- No code or content updates today.
+
+---
+
 ## [0.5.0] — 2026-05-20
 
 ### Changed
