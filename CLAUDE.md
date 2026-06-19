@@ -34,12 +34,12 @@ A 17-skill Claude Code stack covering the full sales operating cycle — prospec
 |---|---|
 | Pre-call | ICP Builder, Prospect Research |
 | Outreach | Outreach Writer, Cold Call Script, LinkedIn Profile Optimizer |
-| In the meeting | Discovery Call Prep, NEPQ Appointment Script, Objection Handler |
+| In the meeting | Discovery Call Prep, DQM Appointment Script, Objection Handler |
 | Post-call | Call Notes to CRM, Follow-up Sequencer, Proposal Writer |
 | Account management | Multi-Client Tracker, Client Activity Report |
 | Engagement lifecycle | New Client Onboarding, Win/Loss Debrief, Referral Ask, Commission Tracker |
 
-**Methodology:** NEPQ (Jeremy Miner framework) baked into skill #11 (`nepq-appointment-script.md`)
+**Methodology:** Diagnostic Questioning Method (DQM) baked into skill #11 (`nepq-appointment-script.md`)
 
 ## Key Files
 

@@ -79,7 +79,7 @@ function upsellHtml() {
     <h1 style="font-size:22px;font-weight:700;margin:0 0 16px">Upgrade to Full OS &mdash; $60 off for 48 hours.</h1>
     <p style="color:#444;line-height:1.6;margin:0 0 16px">
       You've had the Core Stack for a few days. The 10 skills you're missing are the ones
-      that close the gaps: NEPQ appointment script, objection handler, proposal writer,
+      that close the gaps: DQM appointment script, objection handler, proposal writer,
       multi-client tracker, and more.
     </p>
     <p style="color:#444;line-height:1.6;margin:0 0 24px">

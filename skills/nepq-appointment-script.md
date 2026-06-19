@@ -2,13 +2,13 @@
 
 ## Trigger
 
-Invoked when a rep needs a structured appointment script using the NEPQ (Neuro-Emotional Persuasion Questioning) framework — for any stage of the sales process.
+Invoked when a rep needs a structured appointment script using the Diagnostic Questioning Method (DQM) — for any stage of the sales process.
 
 ---
 
-## What NEPQ Is
+## What DQM Is
 
-NEPQ is a question-based sales methodology built on the principle that people are more persuaded by conclusions they reach themselves than conclusions pitched at them. The rep's role is to ask questions that surface the prospect's own awareness of their problem, the consequences of leaving it unsolved, and what an ideal outcome looks like — in that order.
+DQM is a question-based sales methodology built on the principle that people are more persuaded by conclusions they reach themselves than conclusions pitched at them. The rep's role is to ask questions that surface the prospect's own awareness of their problem, the consequences of leaving it unsolved, and what an ideal outcome looks like — in that order.
 
 The technique is not manipulative. It is precise listening structured as a conversation. The prospect does most of the talking. The rep guides.
 
@@ -28,7 +28,7 @@ Three inputs. Ask for any that are missing.
 
 ## Output
 
-A full NEPQ-structured appointment script with six sections. Every question must be specific to this company and contact — derived from the brief, not generic NEPQ templates.
+A full DQM-structured appointment script with six sections. Every question must be specific to this company and contact — derived from the brief, not generic DQM templates.
 
 ---
 
@@ -37,7 +37,7 @@ A full NEPQ-structured appointment script with six sections. Every question must
 **Banned words and phrases:**
 leverage, synergies, robust, cutting-edge, delve, seamless, streamline, empower, game-changer, transformative, as I mentioned, I'd like to share, I think you'll find, the reason I'm asking is, does that make sense, fair enough, absolutely, totally, for sure, pain points (name the specific issue), solution (name the category).
 
-**Tone rule:** NEPQ lives and dies on tonality. The questions are secondary — how they're delivered is primary. Each section has a required tone note. The rep must internalize the tone before speaking the question, not perform it.
+**Tone rule:** DQM lives and dies on tonality. The questions are secondary — how they're delivered is primary. Each section has a required tone note. The rep must internalize the tone before speaking the question, not perform it.
 
 **Specificity rule:** Every question in this script references something specific to this company, this contact's role, or this industry. No question should be usable in a script for a different company without modification.
 
@@ -50,7 +50,7 @@ leverage, synergies, robust, cutting-edge, delve, seamless, streamline, empower,
 
 ---
 
-## NEPQ Script Structure
+## DQM Script Structure
 
 ### Section 1: Connection Statement
 
@@ -145,7 +145,7 @@ Deliver the full script with no preamble. Use this exact structure:
 
 ---
 
-### NEPQ Script — [Company Name] | [Contact Role] | [Appointment Type]
+### DQM Script — [Company Name] | [Contact Role] | [Appointment Type]
 
 ---
 

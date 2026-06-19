@@ -23,9 +23,9 @@ Three responses at different pressure levels. Each under 50 words. Each leads wi
 
 ---
 
-## NEPQ Influence
+## Diagnostic Questioning Influence
 
-NEPQ responses do not fight objections. They redirect the prospect's thinking by asking questions that surface what the objection is actually about. Most objections are surface expressions of a deeper uncertainty — price objections are often risk objections, timing objections are often priority objections. The responses should create space for the real issue to emerge.
+Diagnostic Questioning responses do not fight objections. They redirect the prospect's thinking by asking questions that surface what the objection is actually about. Most objections are surface expressions of a deeper uncertainty — price objections are often risk objections, timing objections are often priority objections. The responses should create space for the real issue to emerge.
 
 ---
 

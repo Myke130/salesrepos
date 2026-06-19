@@ -31,7 +31,7 @@ const PHASES = [
     label: 'In the Meeting',
     skills: [
       { name: 'Discovery Call Prep',   command: '/discovery-call-prep' },
-      { name: 'NEPQ Appointment Script', command: '/nepq-appointment-script' },
+      { name: 'DQM Appointment Script', command: '/nepq-appointment-script' },
       { name: 'Objection Handler',     command: '/objection-handler' },
     ],
     description: `The discovery call is where deals are made or lost before you ever send a proposal. These skills build your talk track, generate needs-first discovery questions from the account brief, and give you three objection responses before the objection gets raised. You're not winging it. You're prepared.`,
@@ -433,7 +433,7 @@ function Pricing() {
               <ul className="space-y-3 mb-8 flex-1">
                 {[
                   'All 17 skills — full OS, nothing held back',
-                  'NEPQ Appointment Script, Objection Handler, Cold Call Script',
+                  'DQM Appointment Script, Objection Handler, Cold Call Script',
                   'Proposal Writer, LinkedIn Profile Optimizer, ICP Builder',
                   'Win/Loss Debrief, Referral Ask, New Client Onboarding, Commission Tracker',
                 ].map((row) => (
