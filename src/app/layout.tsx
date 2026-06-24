@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Sora, DM_Sans, JetBrains_Mono } from 'next/font/google'
+import MetaPixel from '@/components/MetaPixel'
 import './globals.css'
 
 const sora = Sora({
@@ -67,6 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* End Scupe.ai integration script for Obtainr LLC */}
       </head>
       <body className="font-sans bg-white text-navy antialiased">
+        <MetaPixel />
         {children}
       </body>
     </html>

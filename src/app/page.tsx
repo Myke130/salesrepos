@@ -3,6 +3,7 @@
 import NavClient from '@/components/NavClient'
 import ScrollReveal from '@/components/ScrollReveal'
 import CheckoutButton from '@/components/CheckoutButton'
+import SalesPixel from '@/components/SalesPixel'
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -545,6 +546,7 @@ function Footer() {
 export default function Page() {
   return (
     <>
+      <SalesPixel />
       <NavClient />
       <main>
         <Hero />

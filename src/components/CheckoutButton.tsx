@@ -1,6 +1,13 @@
 'use client'
 
 import { useState } from 'react'
+import { PRICE_AMOUNTS } from '@/lib/prices'
+
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void
+  }
+}
 
 export default function CheckoutButton({
   priceId,
@@ -15,6 +22,11 @@ export default function CheckoutButton({
 
   async function handleClick() {
     setLoading(true)
+    // Meta Pixel — user started checkout
+    window.fbq?.('track', 'InitiateCheckout', {
+      value: PRICE_AMOUNTS[priceId],
+      currency: 'USD',
+    })
     try {
       const res = await fetch('/api/checkout', {
         method: 'POST',
