@@ -39,7 +39,22 @@ A 17-skill Claude Code stack covering the full sales operating cycle — prospec
 | Account management | Multi-Client Tracker, Client Activity Report |
 | Engagement lifecycle | New Client Onboarding, Win/Loss Debrief, Referral Ask, Commission Tracker |
 
-**Methodology:** Diagnostic Questioning Method (DQM) baked into skill #11 (`nepq-appointment-script.md`)
+**Methodology:** Diagnostic Questioning Method (DQM) baked into skill #11 (`dqm-appointment-script.md`)
+
+**Naming:** DQM is the only name used anywhere — file names, slash commands, prose, landing page, delivery emails. The methodology was previously labelled NEPQ; that name is retired and must not reappear. When a skill file changes, **rebuild the download zips** (below) — the rename shipped to the repo in May 2026 but not to the zips, so buyers kept receiving the old wording until 2026-07-27.
+
+**Rebuilding the download zips (required after any `skills/*.md` change):**
+
+```bash
+cd salesrepos
+rm -f public/downloads/salesrepos-full-os.zip public/downloads/salesrepos-core.zip
+(cd skills && zip -q -X ../public/downloads/salesrepos-full-os.zip *.md)
+(cd skills && zip -q -X ../public/downloads/salesrepos-core.zip \
+  icp-builder.md prospect-research.md outreach-writer.md cold-call-script.md \
+  discovery-call-prep.md call-notes-to-crm.md followup-sequencer.md)
+```
+
+Verify with `unzip -l` (17 files / 7 files) and by diffing an extracted file against `skills/`.
 
 ## Key Files
 

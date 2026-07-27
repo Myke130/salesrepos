@@ -1,4 +1,4 @@
-# Skill: nepq-appointment-script
+# Skill: dqm-appointment-script
 
 ## Trigger
 

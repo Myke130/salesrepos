@@ -32,7 +32,7 @@ const PHASES = [
     label: 'In the Meeting',
     skills: [
       { name: 'Discovery Call Prep',   command: '/discovery-call-prep' },
-      { name: 'DQM Appointment Script', command: '/nepq-appointment-script' },
+      { name: 'DQM Appointment Script', command: '/dqm-appointment-script' },
       { name: 'Objection Handler',     command: '/objection-handler' },
     ],
     description: `The discovery call is where deals are made or lost before you ever send a proposal. These skills build your talk track, generate needs-first discovery questions from the account brief, and give you three objection responses before the objection gets raised. You're not winging it. You're prepared.`,
