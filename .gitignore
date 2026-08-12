@@ -19,3 +19,6 @@ next-env.d.ts
 
 # OS
 .DS_Store
+
+# Vercel CLI env snapshot — contains a short-lived OIDC token, never commit
+.env.stats
